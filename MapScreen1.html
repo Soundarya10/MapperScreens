@@ -1,0 +1,45 @@
+<!Doctype HTML>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
+</head>
+<style type="text/css">
+	.container {
+		width : 60%;
+		border : 1px solid grey;
+		margin-top: 50px;
+		padding: 20px;
+	}
+	.formgroup {
+		padding: 30px;
+	}
+	#btnLoad {
+		float : right;
+	}
+
+</style>
+<body>
+	<div class = "container">
+		<form class = "formgroup">
+			<div class="form-group">
+			    <label for="uploadFile" >File input</label>
+			    <input type="file" id="uploadFile" class="form-control-file" aria-describedby="fileHelp" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" onchange='triggerValidation(this)'>
+			    <small id="fileHelp" class="form-text text-muted">Accepts only csv , xlsx , xls files </small>
+			 </div>
+			<input type='button' id='btnLoad' class="btn btn-default" value='Next Page!!' onclick="window.location = 'MapScreen2.html';">
+		</form>
+	</div>
+</body>
+</html>
+
+<!--Validating File -->
+<script type="text/javascript">
+var regex = new RegExp("(.*?)\.(csv|xlsx|xls)$");
+function triggerValidation(el) {
+  if (!(regex.test(el.value.toLowerCase()))) {
+    el.value = '';
+    alert('Please select correct file format');
+  }
+}
+</script>

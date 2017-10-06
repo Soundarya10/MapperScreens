@@ -1,0 +1,53 @@
+<!Doctype HTML>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>	
+</head>
+<style type="text/css">
+	.container {
+		width : 60%;
+
+		padding: 20px;
+		margin-top: 30px;
+
+	}
+	#btnLoad {
+		
+		float : right;
+	}
+	
+
+</style>
+<body>
+	<div class = "container">
+		<div class="table-responsive"> 
+		<table class="table table-bordered">
+		      <tr>
+		        <th>Firstname</th>
+		        <th>Lastname</th>
+		        <th>Age</th>
+		        <th>City</th>
+		        <th>Country</th>
+		        <th>Action </th>
+		      </tr>
+		      <td> Ammu </td>
+		      <td> Reddy </td>
+		      <td> 23 </td>
+		      <td> Novi </td>
+		      <td> US </td>
+		      <td>
+		          <button ng-click="edit($index)" ng-hide="x.editable" class="btn btn-default" >Edit</button>
+		        
+		          <button ng-click="delete($index)" class="btn btn-default" > Delete</button>
+		      </td>
+
+
+		</table>
+		</div>
+		<input type='button' id='btnLoad' class="btn btn-default" value='Save'>
+
+	</div>
+</body>
+</html>
+
